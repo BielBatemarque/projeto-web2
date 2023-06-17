@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// Rota para listagem de filmes
+Route::get('/filmes', 'FilmeController@listarFilmes');
+
+//Rota para cadastrar Filme
+Route::post('/filmes', 'FilmeController@cadastrarFilme');
+
+//Rota para avaliar Filme
+Route::post('/filmes/{id}/avaliar', 'FilmeController@avaliarFilme');
