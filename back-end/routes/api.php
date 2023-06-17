@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FilmeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 // Rota para listagem de filmes
-Route::get('/filmes', 'FilmeController@listarFilmes');
+Route::get('/filmes', [FilmeController::class, 'listarFilmes']);
 
 //Rota para cadastrar Filme
-Route::post('/filmes', 'FilmeController@cadastrarFilme');
+Route::post('/filmes', [FilmeController::class, 'cadastrarFilme']);
 
 //Rota para avaliar Filme
-Route::post('/filmes/{id}/avaliar', 'FilmeController@avaliarFilme');
+Route::post('/filmes/{id}/avaliar', [FilmeController::class, 'avaliarFilme']);
