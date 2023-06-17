@@ -1,0 +1,9 @@
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    line-height: 60px;
+}
