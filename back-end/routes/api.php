@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmeController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,14 @@ use App\Http\Controllers\FilmeController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Rota para listagem de filmes
+//Rotas para Filmes
 Route::get('/filmes', [FilmeController::class, 'listarFilmes']);
-
-//Rota para cadastrar Filme
 Route::post('/filmes', [FilmeController::class, 'cadastrarFilme']);
-
-//Rota para avaliar Filme
 Route::post('/filmes/{id}/avaliar', [FilmeController::class, 'avaliarFilme']);
+
+//Rotas para Usuários
+Route::get('/usuarios', [UsuarioController::class, 'index']);
+Route::post('/usuarios', [UsuarioController::class, 'store']);
+Route::get('/usuarios/{id}', [UsuarioController::class, 'show']);
+Route::put('/usuarios/{id}', [UsuarioController::class, 'update']);
+Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
