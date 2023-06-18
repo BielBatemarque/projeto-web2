@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AvaliacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::post('/usuarios', [UsuarioController::class, 'store']);
 Route::get('/usuarios/{id}', [UsuarioController::class, 'show']);
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update']);
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
+
+//Rota para Avaliação
+Route::get('/avaliacoes', [AvaliacaoController::class, 'listarAvaliacoes']);
+Route::post('/avaliacoes', [AvaliacaoController::class, 'cadastrarAvaliacao']);
