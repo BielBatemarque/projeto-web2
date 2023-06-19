@@ -52,7 +52,7 @@ export const LoginScreen = () => {
                     <input type="text" name="email" id="email" placeholder='email' onChange={handleChange}/>
                     <button type="submit" className='btn' onClick={handleLogin}>Entrar</button>
                 </div>
-                <p className='cadastrese'>Não Possui conta? <Link>Cadastre-se</Link></p>
+                <p className='cadastrese'>Não Possui conta? <Link to={'/cadastrarUsuario/'}>Cadastre-se</Link></p>
            </div>
            <div className="img">
                 <h2 className='logo'>FilmeFlix</h2>

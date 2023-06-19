@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './listarFilmes.css';
+import { Menu } from '../../components/menu';
+import { Link } from 'react-router-dom';
 
 export const ListarFilmes = () => {
     const [filmes, setFilmes] = useState([]);
@@ -20,9 +22,12 @@ export const ListarFilmes = () => {
     
     return(
         <div>
+            <Menu />
             {filmes.map(filme => (
                 <p>{filme.titulo}</p>
+                
             ))}
+            <Link to={'/CadastrarFilme/'}>Cadastrar Novo Filme</Link>
         </div>
     );
 }

@@ -4,8 +4,8 @@ import { MenuItem } from "../MenuItem";
 export const Menu = () => {
     return(
         <nav className='navbar'>
-          <MenuItem text={'Cadastrar Filme'} linkl={'/cadastrarFilme/'}/>
-          <MenuItem text={'Listar Filme'} linkl={'/listarFilme/'}/>
+          <MenuItem text={'Filmes'} linkl={'/listarFilmes/'}/>
+          <MenuItem text={'Avaliações'} linkl={'/listarAvaliacoes/'}/>
         </nav>
     );
 }

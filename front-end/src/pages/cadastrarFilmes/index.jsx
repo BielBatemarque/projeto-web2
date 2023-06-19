@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Menu } from '../../components/menu';
 
 export const CadastrarFilmes = () => {
     const [filme, setFilme] = useState({
@@ -41,6 +42,8 @@ export const CadastrarFilmes = () => {
       };
 
     return(
+      <div>
+        <Menu />
         <form onSubmit={handleSubmit}>
         <div>
           <label>Título:</label>
@@ -49,7 +52,7 @@ export const CadastrarFilmes = () => {
             name="titulo"
             value={filme.titulo}
             onChange={handleChange}
-          />
+            />
         </div>
         <div>
           <label>Descrição:</label>
@@ -57,7 +60,7 @@ export const CadastrarFilmes = () => {
             name="descricao"
             value={filme.descricao}
             onChange={handleChange}
-          ></textarea>
+            ></textarea>
         </div>
         <div>
           <label>Ano:</label>
@@ -66,9 +69,10 @@ export const CadastrarFilmes = () => {
             name="ano"
             value={filme.ano}
             onChange={handleChange}
-          />
+            />
         </div>
         <button type="submit">Cadastrar</button>
       </form>
+    </div>
     );
 };

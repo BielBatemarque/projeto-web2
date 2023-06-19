@@ -3,14 +3,18 @@ import { ListarFilmes } from '../../pages/ListarFilme/index';
 import { CadastrarFilmes } from '../../pages/cadastrarFilmes/index';
 import { LoginScreen } from "../../pages/LoginPage";
 import { HomePage } from "../../pages/HomePage";
+import { ListarAvaliacoes } from "../../pages/ListarAvaliacoes";
+import { CadastrarUsuario } from "../../pages/CadastrarUsuario";
 
 export const Content = () => {
     return(
         <Routes>
             <Route path="/" element={<LoginScreen />} />
             <Route path="/cadastrarFilme/" element={ <CadastrarFilmes />}/>
-            <Route path="/listarFilme/" element={<ListarFilmes />}/>
             <Route path="/HomePage/" element={<HomePage />} />
+            <Route path="/listarFilmes/" element={<ListarFilmes />}/>
+            <Route path="/ListarAvaliacoes/" element={<ListarAvaliacoes />}/>
+            <Route path="cadastrarUsuario" element={<CadastrarUsuario />}/>
         </Routes>        
     );
 }
