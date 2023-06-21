@@ -1,0 +1,22 @@
+.homeContent{
+    display: flex;
+}
+
+h1{
+    text-align: center;
+}
+
+.dv1{
+    width: 50%;
+    text-align: center;
+}
+
+.txt{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cinema{
+    width: 80%;
+}
