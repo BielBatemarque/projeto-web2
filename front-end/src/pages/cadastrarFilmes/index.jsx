@@ -6,25 +6,36 @@ export const CadastrarFilmes = () => {
         titulo: '',
         descricao: '',
         ano: '',
+        imagem:'',
       });
 
       const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFilme((prevFilme) => ({
-          ...prevFilme,
-          [name]: value,
-        }));
+        const { name, value, type, files } = e.target;
+        if (type === 'file') {
+          setFilme((prevFilme) => ({
+            ...prevFilme,
+            [name]: files[0],
+          }));
+        } else {
+          setFilme((prevFilme) => ({
+            ...prevFilme,
+            [name]: value,
+          }));
+        }
       };
 
       const handleSubmit = (e) => {
         e.preventDefault();
       
+        const formData = new FormData();
+        formData.append('titulo', filme.titulo);
+        formData.append('descricao', filme.descricao);
+        formData.append('ano', filme.ano);
+        formData.append('imagem', filme.imagem);
+      
         fetch('http://localhost:8000/api/filmes', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(filme),
+          body: formData,
         })
           .then((response) => response.json())
           .then((data) => {
@@ -34,6 +45,7 @@ export const CadastrarFilmes = () => {
               titulo: '',
               descricao: '',
               ano: '',
+              imagem: '',
             });
           })
           .catch((error) => {
@@ -70,6 +82,15 @@ export const CadastrarFilmes = () => {
             value={filme.ano}
             onChange={handleChange}
             />
+        </div>
+        <div>
+          <label>Banner:</label>
+          <input 
+            type="file"
+            name='imagem'
+            accept='image/*'
+            onChange={handleChange}
+          />
         </div>
         <button type="submit">Cadastrar</button>
       </form>

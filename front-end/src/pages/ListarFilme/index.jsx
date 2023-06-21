@@ -24,10 +24,12 @@ export const ListarFilmes = () => {
         <div>
             <Menu />
             {filmes.map(filme => (
-                <p>{filme.titulo}</p>
+                <div key={filme.id}>
+                    <p key={filme.id}>{filme.titulo}</p>
+                    <Link to={`/avaliarFilme/:${filme.id}`}>Avaliar Filme</Link>
+                </div>
                 
             ))}
-            <Link to={'/CadastrarFilme/'}>Cadastrar Novo Filme</Link>
         </div>
     );
 }

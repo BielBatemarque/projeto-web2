@@ -16,6 +16,7 @@ class FilmeController extends Controller{
             'titulo' => 'required|string',
             'descricao' => 'required|string',
             'ano' => 'required|integer',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Criar um novo filme com base nos dados recebidos
@@ -23,6 +24,14 @@ class FilmeController extends Controller{
         $filme->titulo = $request->input('titulo');
         $filme->descricao = $request->input('descricao');
         $filme->ano = $request->input('ano');
+
+        if ($request->hasFile('imagem')) {
+            $imagem = $request->file('imagem');
+            $nomeImagem = time() . '_' . $imagem->getClientOriginalName();
+            $caminhoImagem = $imagem->storeAs('imagens', $nomeImagem, 'public');
+            $filme->imagem = $caminhoImagem;
+        }
+
         $filme->save();
 
         return response()->json('Filme cadastrado com sucesso!');

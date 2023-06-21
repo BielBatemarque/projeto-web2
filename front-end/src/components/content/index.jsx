@@ -5,6 +5,7 @@ import { LoginScreen } from "../../pages/LoginPage";
 import { HomePage } from "../../pages/HomePage";
 import { ListarAvaliacoes } from "../../pages/ListarAvaliacoes";
 import { CadastrarUsuario } from "../../pages/CadastrarUsuario";
+import { AvaliarFilme} from '../../pages/AvaliarFilme/index';
 
 export const Content = () => {
     return(
@@ -15,6 +16,7 @@ export const Content = () => {
             <Route path="/listarFilmes/" element={<ListarFilmes />}/>
             <Route path="/ListarAvaliacoes/" element={<ListarAvaliacoes />}/>
             <Route path="cadastrarUsuario" element={<CadastrarUsuario />}/>
+            <Route path="/avaliarFilme/:id" element={<AvaliarFilme />} />
         </Routes>        
     );
 }
