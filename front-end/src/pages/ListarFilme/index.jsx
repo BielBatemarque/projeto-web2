@@ -28,8 +28,8 @@ export const ListarFilmes = () => {
                     <p key={filme.id}>{filme.titulo}</p>
                     <Link to={`/avaliarFilme/:${filme.id}`}>Avaliar Filme</Link>
                 </div>
-                
             ))}
+            <Link to={'/cadastrarFilme/'}>Cadastrar Novo Filme</Link>
         </div>
     );
 }

@@ -83,15 +83,6 @@ export const CadastrarFilmes = () => {
             onChange={handleChange}
             />
         </div>
-        <div>
-          <label>Banner:</label>
-          <input 
-            type="file"
-            name='imagem'
-            accept='image/*'
-            onChange={handleChange}
-          />
-        </div>
         <button type="submit">Cadastrar</button>
       </form>
     </div>

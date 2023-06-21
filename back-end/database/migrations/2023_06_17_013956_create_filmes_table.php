@@ -11,7 +11,6 @@ class CreateFilmesTable extends Migration{
             $table->string('titulo');
             $table->text('descricao');
             $table->integer('ano');
-            $table->string('imagem')->nullable();
             $table->timestamps();
         });
     }
