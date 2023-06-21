@@ -29,8 +29,7 @@ export const AvaliarFilme = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // Exibir mensagem de sucesso
-        // Limpar o formulário
+        console.log(data);
         setAvaliacao({
           filme_id: '',
           user_id: '',
@@ -39,7 +38,7 @@ export const AvaliarFilme = () => {
         });
       })
       .catch((error) => {
-        console.error(error); // Exibir mensagem de erro
+        console.error(error);
       });
   };
 
@@ -95,4 +94,4 @@ export const AvaliarFilme = () => {
       </form>
     </div>
   );
-}
+};
