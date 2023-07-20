@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { globalContext } from '../../context/globalContext';
 
 export const LoginScreen = () => {
   const [listUser, setListUser] = useState([]);
+  const { dispatch, state } = useContext(globalContext);
+  const navigate = useNavigate();
   const [login, setLogin] = useState({
     nome: '',
     senha: '',
@@ -29,9 +33,8 @@ export const LoginScreen = () => {
     const { nome, senha } = login;
     const user = listUser.find((user) => user.nome === nome && user.senha === senha);
     if (user) {
-      console.log('Usuário logado:', user);
-      const url = window.location;
-      window.location = url + 'homePage/';
+      dispatch({type: 'autentication'});
+      navigate('/HomePage/');
     } else {
       console.log('Usuário não encontrado');
     }

@@ -17,7 +17,6 @@ export const ListarFilmes = () => {
     
     useEffect(() => {
         handleFetchFilmes();
-        console.log(filmes);
     }, []);
 
     const handleExcluirFilme = async (id) => {
@@ -25,8 +24,6 @@ export const ListarFilmes = () => {
           await fetch(`http://localhost:8000/api/filmes/${id}`, {
             method: 'DELETE',
           });
-      
-          // Atualize a lista de filmes após a exclusão
           handleFetchFilmes();
         } catch (error) {
           console.error('Erro ao excluir filme:', error);
