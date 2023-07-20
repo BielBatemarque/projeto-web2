@@ -19,6 +19,19 @@ export const ListarFilmes = () => {
         handleFetchFilmes();
         console.log(filmes);
     }, []);
+
+    const handleExcluirFilme = async (id) => {
+        try {
+          await fetch(`http://localhost:8000/api/filmes/${id}`, {
+            method: 'DELETE',
+          });
+      
+          // Atualize a lista de filmes após a exclusão
+          handleFetchFilmes();
+        } catch (error) {
+          console.error('Erro ao excluir filme:', error);
+        }
+      };
     
     return(
         <div>
@@ -26,7 +39,8 @@ export const ListarFilmes = () => {
                 <div key={filme.id}>
                     <p key={filme.id}>{filme.titulo}</p>
                     <Link to={`/avaliarFilme/:${filme.id}`}>Avaliar Filme</Link><br />
-                    <Link to={`/editarFilme/${filme.id}`}>Editar Filme</Link>
+                    <Link to={`/editarFilme/${filme.id}`}>Editar Filme</Link> <br />
+                    <button onClick={() => handleExcluirFilme(filme.id)}>Excluir Filme</button>
                 </div>
             ))}
             <Link to={'/cadastrarFilme/'}>Cadastrar Novo Filme</Link>

@@ -35,8 +35,7 @@ class FilmeController extends Controller{
         return response()->json(['mensagem' => 'Filme avaliado com sucesso']);
     }
 
-    public function editarFilme(Request $request, $id)
-    {
+    public function editarFilme(Request $request, $id){
         // Encontre o filme pelo ID
         $filme = Filme::find($id);
 
@@ -60,6 +59,18 @@ class FilmeController extends Controller{
 
         // Retorna uma resposta em JSON com uma mensagem de sucesso
         return response()->json(['mensagem' => 'Filme atualizado com sucesso']);
+    }
+
+    public function excluirFilme($id) {
+        $filme = Filme::find($id);
+
+        if (!$filme) {
+            return response()->json(['mensagem' => 'Filme não encontrado'], 404);
+        }
+
+        $filme->delete();
+
+        return response()->json(['mensagem' => 'Filme excluído com sucesso']);
     }
 
 }
