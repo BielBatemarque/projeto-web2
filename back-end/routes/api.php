@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/filmes', [FilmeController::class, 'listarFilmes']);
 Route::post('/filmes', [FilmeController::class, 'cadastrarFilme']);
 Route::post('/filmes/{id}/avaliar', [FilmeController::class, 'avaliarFilme']);
+Route::put('/filmes/{id}/editar', [FilmeController::class, 'editarFilme']);
 
 //Rotas para Usuários
 Route::get('/usuarios', [UsuarioController::class, 'index']);

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Menu } from '../../components/menu/index';
 
 export const AvaliarFilme = () => {
   const [avaliacao, setAvaliacao] = useState({
@@ -44,7 +43,6 @@ export const AvaliarFilme = () => {
 
   return (
     <div className="avaliarFilme">
-      <Menu />
       <h1>Avaliar Filmes</h1>
       <form onSubmit={handleSubmit}>
         <div>

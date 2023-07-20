@@ -26,7 +26,6 @@ class FilmeController extends Controller{
         $filme->save();
 
         return response()->json('Filme cadastrado com sucesso!');
-
     }
 
     public function avaliarFilme(Request $request, $id){
@@ -35,4 +34,32 @@ class FilmeController extends Controller{
         // Retorna uma resposta em JSON com uma mensagem de sucesso
         return response()->json(['mensagem' => 'Filme avaliado com sucesso']);
     }
+
+    public function editarFilme(Request $request, $id)
+    {
+        // Encontre o filme pelo ID
+        $filme = Filme::find($id);
+
+        // Verifique se o filme foi encontrado
+        if (!$filme) {
+            return response()->json(['mensagem' => 'Filme não encontrado'], 404);
+        }
+
+        // Valide os dados atualizados
+        $request->validate([
+            'titulo' => 'required|string',
+            'descricao' => 'required|string',
+            'ano' => 'required|integer',
+        ]);
+
+        // Atualize os campos do filme com os dados recebidos
+        $filme->titulo = $request->input('titulo');
+        $filme->descricao = $request->input('descricao');
+        $filme->ano = $request->input('ano');
+        $filme->save();
+
+        // Retorna uma resposta em JSON com uma mensagem de sucesso
+        return response()->json(['mensagem' => 'Filme atualizado com sucesso']);
+    }
+
 }

@@ -1,11 +1,9 @@
-import { Menu } from "../../components/menu";
 import './styles.css';
 import cine from '../../assets/cinema.jpg';
 
 export const HomePage = () => {
     return(
         <div className="HomePage">
-            <Menu />
                 <h1>FilmeFlix</h1>
             <div className="homeContent">
                 <div className="dv1">

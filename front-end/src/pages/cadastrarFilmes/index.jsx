@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Menu } from '../../components/menu';
 
 export const CadastrarFilmes = () => {
     const [filme, setFilme] = useState({
@@ -55,7 +54,6 @@ export const CadastrarFilmes = () => {
 
     return(
       <div>
-        <Menu />
         <form onSubmit={handleSubmit}>
         <div>
           <label>Título:</label>

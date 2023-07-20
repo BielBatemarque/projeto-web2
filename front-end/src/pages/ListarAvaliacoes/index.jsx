@@ -34,7 +34,6 @@ export const ListarAvaliacoes = () => {
   }
   return (
     <div className='listarAvaliacoes'>
-      <Menu />
       <div className="content">
         {avaliacoes.map(avaliacao => (
           <div className='avaliacao-info' key={avaliacao.id}>
