@@ -73,4 +73,22 @@ class FilmeController extends Controller{
         return response()->json(['mensagem' => 'Filme excluído com sucesso']);
     }
 
+    public function editarAvaliacao(Request $request, $id){
+        $request->validate([
+            'filme_id' => 'required',
+            'user_id' => 'required',
+            'nota' => 'required|integer',
+            'descricao' => 'nullable|string',
+        ]);
+
+        $avaliacao = Avaliacao::findOrFail($id);
+        $avaliacao->filme_id = $request->input('filme_id');
+        $avaliacao->user_id = $request->input('user_id');
+        $avaliacao->nota = $request->input('nota');
+        $avaliacao->descricao = $request->input('descricao');
+        $avaliacao->save();
+
+        return response()->json('Avaliação atualizada com sucesso!');
+    }
+
 }

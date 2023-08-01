@@ -37,3 +37,4 @@ Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
 //Rota para Avaliação
 Route::get('/avaliacoes', [AvaliacaoController::class, 'listarAvaliacoes']);
 Route::post('/avaliacoes', [AvaliacaoController::class, 'cadastrarAvaliacao']);
+Route::put('/avaliacoes/{id}/editar', [AvaliacaoController::class, 'editarAvaliacao']);
