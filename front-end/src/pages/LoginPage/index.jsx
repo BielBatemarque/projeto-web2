@@ -62,7 +62,7 @@ export const LoginScreen = () => {
         </p>
       </div>
       <div className="img">
-        <h2 className="logo">FilmeFlix</h2>
+        <img src="https://static.vecteezy.com/system/resources/previews/011/720/979/original/cinema-tickets-with-pop-corn-drink-amd-glasses-free-png.png" alt="logo-pipoca" className='cinema' />
       </div>
     </div>
   );

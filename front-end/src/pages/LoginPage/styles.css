@@ -68,3 +68,8 @@ button:hover{
     margin: auto auto;
     font-style: 160px;
 }
+
+.cinema{
+    margin: auto auto;
+     width: 400px !important;
+}
