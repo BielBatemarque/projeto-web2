@@ -7,6 +7,7 @@ import { ListarAvaliacoes } from "../../pages/ListarAvaliacoes";
 import { CadastrarUsuario } from "../../pages/CadastrarUsuario";
 import { AvaliarFilme} from '../../pages/AvaliarFilme/index';
 import { EditarFilmes } from "../../pages/EditarFilme";
+import { EditarAvaliacao } from "../../pages/EditarAvaliacao";
 
 export const Content = () => {
     return(
@@ -19,6 +20,7 @@ export const Content = () => {
             <Route path="cadastrarUsuario" element={<CadastrarUsuario />}/>
             <Route path="/avaliarFilme/:id" element={<AvaliarFilme />} />
             <Route path="/editarFilme/:id" element={<EditarFilmes />} />
+            <Route path="/editarAvaliacao/:id" element={<EditarAvaliacao />}/>
         </Routes>        
     );
 }

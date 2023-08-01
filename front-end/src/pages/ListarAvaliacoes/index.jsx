@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu } from '../../components/menu';
+import { Link } from 'react-router-dom';
 import './ListarAvaliacoes.css';
 
 export const ListarAvaliacoes = () => {
@@ -40,6 +40,7 @@ export const ListarAvaliacoes = () => {
             <p>{findFilmeTitulo(avaliacao.filme_id)}</p>
             <p>{avaliacao.nota}</p>
             <p>{avaliacao.descricao}</p>
+            <Link to={`/editarAvaliacao/:${avaliacao.id}`}>Editar</Link>
           </div>
         ))}
       </div>
