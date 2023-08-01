@@ -40,7 +40,7 @@ export const ListarAvaliacoes = () => {
             <p>{findFilmeTitulo(avaliacao.filme_id)}</p>
             <p>{avaliacao.nota}</p>
             <p>{avaliacao.descricao}</p>
-            <Link to={`/editarAvaliacao/:${avaliacao.id}`}>Editar</Link>
+            <Link to={`/editarAvaliacao/${avaliacao.id}`}>Editar</Link>
           </div>
         ))}
       </div>
